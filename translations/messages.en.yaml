@@ -1,0 +1,8 @@
+postTable.columns:
+  id: id
+  header: header
+  description: description
+  image: image
+  addingDate: adding date
+  lastUpdateDate: last update date
+  action: action

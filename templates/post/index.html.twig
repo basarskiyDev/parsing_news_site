@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+
+
+{% block body %}
+
+
+
+
+
+    <div id="datatables_container" class="dt-container"
+         data-dt-settings="{{ datatable_settings(datatable)|escape }}"
+         data-dt-name="{{ datatable.name }}">
+        <div id="presidents">Loading...</div>
+    </div>
+    <!-- before the closing <body> tag -->
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/datatables.min.js"></script>
+    <script src="{{ asset('bundles/js/datatables.js') }}"></script>
+
+
+    <script>
+        $(function() {
+            $('#datatables_container').initDataTables({{ datatable_settings(datatable) }});
+        });
+    </script>
+{% endblock %}
